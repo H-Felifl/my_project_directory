@@ -7,11 +7,12 @@
     <div class="container">
         <div class="row">
             {% for product in product.products %}
-                <div class="col-sm-4 col-md-3">
+                <div class="col-md-4 mt-5">
                     <div class="card">
+                        <div class="card-title mb-3 text-center">{{ product.title }}</div>
                         <div class="card-body text-center">
 
-                            <div class="card-title mb-3">{{ product.title }}</div>
+                            <img class="img-fluid" src="{{ product.img }}" alt="">
 
 
 {#                            <a href="{{ path('app_order',{id:product.id}) }}">#}
@@ -23,7 +24,7 @@
                 </div>
             {% endfor %}
         </div>
-{#        <a href="{{ path('app_departments') }}">back</a>#}
+        <a href="{{ path('app_categories') }}">back</a>
 
     </div>
 {% endblock %}
