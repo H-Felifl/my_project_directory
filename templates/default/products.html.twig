@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+
+{% block inhoud %}
+
+
+    <div class="container">
+        <div class="row">
+            {% for product in product.products %}
+                <div class="col-sm-4 col-md-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+
+                            <div class="card-title mb-3">{{ product.title }}</div>
+
+
+{#                            <a href="{{ path('app_order',{id:product.id}) }}">#}
+{#                                {{ product.title }} {{ product.price }}</a>#}
+
+                            <div class="card-title mb-3">{{ product.description }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+{#        <a href="{{ path('app_departments') }}">back</a>#}
+
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            {% for d in employee %}#}
+{#                <div class="col-sm-4 col-md-3">#}
+{#                    <div class="card">#}
+{#                        <div class="card-body text-center">#}
+
+{#                                {{ d.fname }} {{ d.lname }}#}
+
+{#                            <div class="card-title mb-3">{{ d.phonenumber }}</div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+
+
+{#    </div>#}
+{#{% endblock %}#}

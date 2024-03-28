@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% set page_title = 'Home' %}
+
+{#{% block title %}Hello DefaultController!{% endblock %}#}
+
+{% block inhoud %}
+
+    <div class="container">
+        <div class="row">
+            {% for d in categories %}
+                <div class="col-md-4 mt-5">
+                    <div class="card border">
+                        <div class="card-body text-center">
+
+                            <img class="img-fluid" src="{{ d.img }}" alt="">
+                            <div class="card-footer">
+                            <a href="{{ path('app_product',{id:d.id}) }}">{{ d.name }}</a>
+                            </div>
+{#                            <div class="card-title mb-3">{{ d.name }}</div>#}
+{#                            <div class="card-footer">{{ d.name }}</div>#}
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+{#            <a href="{{ path('app_new_department') }}">toevoegen</a>#}
+        </div>
+
+
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block body %}#}
+
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#        {% for d in departments %}#}
+{#            <div class="col-sm-4 col-md-3">#}
+{#                <div class="card">#}
+{#                    <div class="card-body text-center">#}
+{#                    <a href="{{ path('app_departments', {id:d.id}) }}">#}
+{#                        {{ d.name }}#}
+{#                    </a>#}
+{#                        <div class="card-title mb-3">{{ departments.name }}</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+{#    </div>#}
+
+
+
+{#{% endblock %}#}
+
+
+
+
