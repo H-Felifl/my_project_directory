@@ -3,11 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Category;
-//use App\Entity\Employee;
 use App\Entity\Order;
 use App\Entity\Product;
 //use App\Form\OrderType;
 use Doctrine\ORM\EntityManagerInterface;
+use Form\CategoryType;
 use Form\OrderType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -71,58 +71,30 @@ class DefaultController extends AbstractController
 
 
 
-
-
-//    public function order(EntityManagerInterface $entityManager, $id,Request $request): \Symfony\Component\HttpFoundation\RedirectResponse|Response
+//    #[\Symfony\Component\Routing\Attribute\Route('/new', name: 'app_new_category')]
+//    public function new(EntityManagerInterface $entityManager, Request $request): Response
 //    {
-//        $order=new Order();
-//        $form=$this->createForm(OrderType::class, $order);
+//        $category=new Category();
+//        $form=$this->createForm(CategoryType::class, $category);
+//
 //        $form->handleRequest($request);
+//
 //        if($form->isSubmitted() && $form->isValid())
 //        {
-//            //afhandelen data
-//            $order = $form->getData();
-//            $product=$entityManager->getRepository(Product::class)->find($id);
-//            $order->setProduct($product);
-////            dd($order);
-//            $entityManager->persist($order);
+//            $category = $form->getData();
+//            //dd($department);
+//            $entityManager->persist($category);
 //            $entityManager->flush();
-//            $this->addFlash('success','De order is toegevoegd');
-//            return $this->redirectToRoute('app_departments');
+//            $this->addFlash('success','De categorie is toegevoegd!');
+//            return $this->redirectToRoute('app_categories');
 //        }
+//
 //        return $this->render('default/new.html.twig', [
 //            'form' => $form,
 //        ]);
 //    }
 
 
-
-
-
-
-
-
-
-
-
-
-//    #[Route("/home")]
-//   public function homepage()
-//    {
-//        return new Response( "<h1>" . "eerste pagina" . "</h1>");
-//    }
-//
-//    #[Route("/second")]
-//    public  function welkom()
-//    {
-//        return new Response("tweede ");
-//    }
-//
-//    #[Route("/third")]
-//    public  function doei()
-//    {
-//        return new Response("Tot ziens! ");
-//    }
 
 
 
