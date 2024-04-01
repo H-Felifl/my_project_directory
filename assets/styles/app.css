@@ -1,12 +1,10 @@
 body {
     /*background-color: skyblue;*/
-    background-image: url("/public/img/wallpaper1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-color: whitesmoke;
 }
 
-inhoud {
-    background-image: url("/public/img/wallpaper1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+/*inhoud {*/
+/*    background-image: url("/public/img/wallpaper1.jpg");*/
+/*    background-size: cover;*/
+/*    background-repeat: no-repeat;*/
+/*}*/
