@@ -5,14 +5,15 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Entity\Order;
 use App\Entity\Product;
-//use App\Form\OrderType;
+use App\Form\CategoryType;
+use App\Form\OrderType;
 use Doctrine\ORM\EntityManagerInterface;
-use Form\CategoryType;
-use Form\OrderType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
+//use App\Form\OrderType;
 
 class DefaultController extends AbstractController
 
@@ -42,6 +43,7 @@ class DefaultController extends AbstractController
         $order=new Order();
         $form=$this->createForm(OrderType::class, $order);
         $form->handleRequest($request);
+        $product = $entityManager->getRepository(Product::class)->find($id);
         if($form->isSubmitted() && $form->isValid())
         {
             //afhandelen data
@@ -54,6 +56,30 @@ class DefaultController extends AbstractController
             $this->addFlash('success','De order is toegevoegd');
             return $this->redirectToRoute('app_departments');
         }
+        return $this->render('default/new.html.twig', [
+            'form' => $form,
+            'product' => $product
+        ]);
+    }
+
+    #[\Symfony\Component\Routing\Attribute\Route('/new', name: 'app_new_category')]
+    public function new(EntityManagerInterface $entityManager, Request $request): Response
+    {
+//        $department=new Department();
+        $form=$this->createForm(CategoryType::class);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $category = $form->getData();
+//            dd($department);
+            $entityManager->persist($category);
+            $entityManager->flush();
+            $this->addFlash('success','De afdeling is toegevoegd');
+            return $this->redirectToRoute('app_categories');
+        }
+
         return $this->render('default/new.html.twig', [
             'form' => $form,
         ]);

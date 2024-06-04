@@ -1,10 +1,8 @@
 <?php
 
-namespace Form;
+namespace App\Form;
 
-use App\Entity\Product;
 use App\Entity\Order;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -28,7 +26,7 @@ class OrderType extends AbstractType
                 'widget' => 'single_text',
             ])
 
-            ->add('delete',SubmitType::class)
+            ->add('submit', SubmitType::class, ['label' => 'oplsaan'])
         ;
     }
 
