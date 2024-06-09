@@ -5,7 +5,7 @@
 {#        <title>{% block title %}Welcome!{% endblock %}</title>#}
 {#        {% set page_title = 'base' %}#}
 
-        <title>{% if page_title is defined %} {{ page_title }} | {% endif %} Your Website</title>
+        <title>{% if page_title is defined %} {{ page_title }} | {% endif %} Pizza Hub </title>
 
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
@@ -26,7 +26,6 @@
 
             <nav class="navbar navbar-expand-lg bg-black px-4">
                 <div class="container-fluid text-white">
-
 
                     <a class="navbar-brand text-white" href="{{ path('app_categories') }}">
                         <div class="row border border-warning border-3 p-1 rounded-2">
@@ -59,6 +58,13 @@
                             </li>
                         </ul>
                     </div>
+
+                    <a href="{{ path('app_categories') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </a>
+
                 </div>
             </nav>
 

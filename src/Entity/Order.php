@@ -15,9 +15,6 @@ class Order
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $meal = null;
-
     #[ORM\Column]
     private ?int $count = null;
 
@@ -28,21 +25,12 @@ class Order
     #[ORM\JoinColumn(nullable: false)]
     private ?Product $product = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $size = null;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getMeal(): ?string
-    {
-        return $this->meal;
-    }
-
-    public function setMeal(string $meal): static
-    {
-        $this->meal = $meal;
-
-        return $this;
     }
 
     public function getCount(): ?int
@@ -77,6 +65,18 @@ class Order
     public function setProduct(?Product $product): static
     {
         $this->product = $product;
+
+        return $this;
+    }
+
+    public function getSize(): ?string
+    {
+        return $this->size;
+    }
+
+    public function setSize(string $size): static
+    {
+        $this->size = $size;
 
         return $this;
     }

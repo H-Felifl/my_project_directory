@@ -14,11 +14,11 @@ class OrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('meal',ChoiceType::class,[
+            ->add('size',ChoiceType::class,[
                 'choices'  => [
-                    'broodje kroket' => 'kroket',
-                    'Cola' => 'Cola',
-                    'Ijsje' => 'Ijsje',
+                    'Large pizza' => 'Large',
+                    'Medium pizza' => 'Medium',
+                    'Small pizza' => 'Small',
                 ],
             ])
             ->add('count')

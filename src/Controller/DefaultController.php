@@ -53,8 +53,8 @@ class DefaultController extends AbstractController
             //dd($department);
             $entityManager->persist($order);
             $entityManager->flush();
-            $this->addFlash('success','De order is toegevoegd');
-            return $this->redirectToRoute('app_departments');
+            $this->addFlash('success','De order is toegevoegd!');
+            return $this->redirectToRoute('app_categories');
         }
         return $this->render('default/new.html.twig', [
             'form' => $form,
