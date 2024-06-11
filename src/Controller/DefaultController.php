@@ -65,6 +65,10 @@ class DefaultController extends AbstractController
     #[\Symfony\Component\Routing\Attribute\Route('/new', name: 'app_new_category')]
     public function new(EntityManagerInterface $entityManager, Request $request): Response
     {
+
+
+
+        $product=new Product();
 //        $department=new Department();
         $form=$this->createForm(CategoryType::class);
 
@@ -82,6 +86,7 @@ class DefaultController extends AbstractController
 
         return $this->render('default/new.html.twig', [
             'form' => $form,
+            'product' => $product
         ]);
     }
 
